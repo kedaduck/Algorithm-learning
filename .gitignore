@@ -206,3 +206,9 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# C project
+!C/*.cpp
+!C/*.c
+!C/*.h
+!C/makefile
