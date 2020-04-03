@@ -2,20 +2,21 @@
 * @Author: leoren  
 * @Date: 2020-04-02 18:20:04  
  * @Last Modified by: leoren
- * @Last Modified time: 2020-04-02 23:56:05
+ * @Last Modified time: 2020-04-03 16:42:19
 * @Description: 链表的一些基本操作　　　反转链表
 */
 #include <stdio.h>
 #include <stdlib.h>
 #include <set>
+#include "listnode.h"
 
-struct ListNode {
-    int val;
-    ListNode *next;
-};
+// struct ListNode {
+//     int val;
+//     ListNode *next;
+// };
 
 /**
- * 便利链表
+ * 遍历链表
  * 
  * */
 void *Traversal(ListNode *head){
