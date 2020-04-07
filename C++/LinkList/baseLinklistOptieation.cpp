@@ -9,20 +9,24 @@ int generateNum(int from, int to);
  * length  the size of generate linkedlist
  * from  to   the range of generate linkedlist each val
  */
-ListNode *generateList(int length, int from, int to){
-    ListNode *head;
-    ListNode *head_pre = head;
-    for(int i = 0; i < length; i++){
-        int random = generateNum(from, to);
-        ListNode a;
-        a.val = random;
-        head = &a;
-        if(i == 9){
-            head->next = NULL;
-        }
-        head = head->next;
+ListNode *geneateLinkList(int length, int from, int to){
+    ListNode* head = NULL;
+    ListNode* pre = NULL;
+    int num = generateNum(from, to);
+    ListNode node;
+    node.val = num;
+    node.next = NULL;
+    head = &node;
+    pre = head;
+    ListNode nodes[9] = {};
+    for(int i = 0; i < length-1; i++){
+        int num1 = generateNum(0, 100);
+        nodes[i].val = num1;
+        nodes[i].next = NULL;
+        pre->next = &nodes[i];
+        pre = pre->next;
     }
-    return head_pre;
+    return head;
 }
 
 void Traversal(ListNode *head){
@@ -42,7 +46,11 @@ int generateNum(int from, int to){
 }
 
 int main(int argc, const char** argv) {
-    ListNode *head = generateList(10, 0, 100);
+    ListNode *head = geneateLinkList(10, 0, 100);
+    while(head){
+        printf("%d\t", head->val);
+        head = head->next;
+    }
     Traversal(head);
     system("pause");
     return 0;
